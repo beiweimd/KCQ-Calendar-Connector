@@ -1,0 +1,745 @@
+{
+  "description": "Real exchange_calendars 4.13.2 output captured from the local calendar database; test snapshot clipped to 2026-10-29..2026-11-30.",
+  "snapshots": [
+    {
+      "snapshot": {
+        "exchange": "SSE",
+        "startDate": "2026-10-29",
+        "endDate": "2026-11-30",
+        "source": "exchange_calendars",
+        "sourceVersion": "4.13.2",
+        "sourceUrl": "https://github.com/gerrymanoim/exchange_calendars",
+        "generatedAt": "2026-10-28T08:46:31.882577+00:00",
+        "revision": "3de40c425af3b40721a2a07dbef59f40602216f42a429d33b5d08e6df61b0caa",
+        "rowCount": 33,
+        "overrideCount": 0
+      },
+      "days": [
+        {
+          "date": "2026-10-29",
+          "isOpen": true
+        },
+        {
+          "date": "2026-10-30",
+          "isOpen": true
+        },
+        {
+          "date": "2026-10-31",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-01",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-02",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-03",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-04",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-05",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-06",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-07",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-08",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-09",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-10",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-11",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-12",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-13",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-14",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-15",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-16",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-17",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-18",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-19",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-20",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-21",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-22",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-23",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-24",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-25",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-26",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-27",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-28",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-29",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-30",
+          "isOpen": true
+        }
+      ]
+    },
+    {
+      "snapshot": {
+        "exchange": "SZSE",
+        "startDate": "2026-10-29",
+        "endDate": "2026-11-30",
+        "source": "exchange_calendars",
+        "sourceVersion": "4.13.2",
+        "sourceUrl": "https://github.com/gerrymanoim/exchange_calendars",
+        "generatedAt": "2026-10-28T08:46:31.882577+00:00",
+        "revision": "3de40c425af3b40721a2a07dbef59f40602216f42a429d33b5d08e6df61b0caa",
+        "rowCount": 33,
+        "overrideCount": 0
+      },
+      "days": [
+        {
+          "date": "2026-10-29",
+          "isOpen": true
+        },
+        {
+          "date": "2026-10-30",
+          "isOpen": true
+        },
+        {
+          "date": "2026-10-31",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-01",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-02",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-03",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-04",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-05",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-06",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-07",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-08",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-09",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-10",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-11",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-12",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-13",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-14",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-15",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-16",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-17",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-18",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-19",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-20",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-21",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-22",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-23",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-24",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-25",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-26",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-27",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-28",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-29",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-30",
+          "isOpen": true
+        }
+      ]
+    },
+    {
+      "snapshot": {
+        "exchange": "XHKG",
+        "startDate": "2026-10-29",
+        "endDate": "2026-11-30",
+        "source": "exchange_calendars",
+        "sourceVersion": "4.13.2",
+        "sourceUrl": "https://github.com/gerrymanoim/exchange_calendars",
+        "generatedAt": "2026-10-28T08:46:31.882577+00:00",
+        "revision": "3de40c425af3b40721a2a07dbef59f40602216f42a429d33b5d08e6df61b0caa",
+        "rowCount": 33,
+        "overrideCount": 0
+      },
+      "days": [
+        {
+          "date": "2026-10-29",
+          "isOpen": true
+        },
+        {
+          "date": "2026-10-30",
+          "isOpen": true
+        },
+        {
+          "date": "2026-10-31",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-01",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-02",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-03",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-04",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-05",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-06",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-07",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-08",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-09",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-10",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-11",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-12",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-13",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-14",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-15",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-16",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-17",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-18",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-19",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-20",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-21",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-22",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-23",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-24",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-25",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-26",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-27",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-28",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-29",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-30",
+          "isOpen": true
+        }
+      ]
+    },
+    {
+      "snapshot": {
+        "exchange": "XNAS",
+        "startDate": "2026-10-29",
+        "endDate": "2026-11-30",
+        "source": "exchange_calendars",
+        "sourceVersion": "4.13.2",
+        "sourceUrl": "https://github.com/gerrymanoim/exchange_calendars",
+        "generatedAt": "2026-10-28T08:46:31.882577+00:00",
+        "revision": "30d4e7c53c96454709d0ec3e9c1b0890517a1198ff6481103133e7fb5ae667fa",
+        "rowCount": 33,
+        "overrideCount": 0
+      },
+      "days": [
+        {
+          "date": "2026-10-29",
+          "isOpen": true
+        },
+        {
+          "date": "2026-10-30",
+          "isOpen": true
+        },
+        {
+          "date": "2026-10-31",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-01",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-02",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-03",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-04",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-05",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-06",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-07",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-08",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-09",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-10",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-11",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-12",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-13",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-14",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-15",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-16",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-17",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-18",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-19",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-20",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-21",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-22",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-23",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-24",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-25",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-26",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-27",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-28",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-29",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-30",
+          "isOpen": true
+        }
+      ]
+    },
+    {
+      "snapshot": {
+        "exchange": "XNYS",
+        "startDate": "2026-10-29",
+        "endDate": "2026-11-30",
+        "source": "exchange_calendars",
+        "sourceVersion": "4.13.2",
+        "sourceUrl": "https://github.com/gerrymanoim/exchange_calendars",
+        "generatedAt": "2026-10-28T08:46:31.882577+00:00",
+        "revision": "30d4e7c53c96454709d0ec3e9c1b0890517a1198ff6481103133e7fb5ae667fa",
+        "rowCount": 33,
+        "overrideCount": 0
+      },
+      "days": [
+        {
+          "date": "2026-10-29",
+          "isOpen": true
+        },
+        {
+          "date": "2026-10-30",
+          "isOpen": true
+        },
+        {
+          "date": "2026-10-31",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-01",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-02",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-03",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-04",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-05",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-06",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-07",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-08",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-09",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-10",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-11",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-12",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-13",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-14",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-15",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-16",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-17",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-18",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-19",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-20",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-21",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-22",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-23",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-24",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-25",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-26",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-27",
+          "isOpen": true
+        },
+        {
+          "date": "2026-11-28",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-29",
+          "isOpen": false
+        },
+        {
+          "date": "2026-11-30",
+          "isOpen": true
+        }
+      ]
+    }
+  ]
+}

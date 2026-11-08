@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+data/*.db*
+bin/
+*.exe
+local-validation.json
+
+.ruff_cache/
+docs/browser-search-unavailable.png

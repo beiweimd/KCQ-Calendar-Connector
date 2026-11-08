@@ -1,0 +1,202 @@
+# 日历专用查询契约；错误码和 V1 envelope 与 KCQ 保持一致。
+openapi: 3.1.0
+info:
+  title: KCQ Calendar Connector
+  version: 0.1.0
+  description: 市场级计划交易日期与 daily/original 槽位，不提供行情或证券停牌状态。
+servers:
+  - url: http://127.0.0.1:8094
+paths:
+  /healthz:
+    get:
+      operationId: health
+      responses:
+        '200':
+          description: SQLite 可读，data.status 为 ok
+        '503':
+          $ref: '#/components/responses/Error'
+  /api/v1/calendars:
+    get:
+      operationId: listCalendars
+      responses:
+        '200':
+          description: 只返回实际导入的市场，data 为包含 market 和 snapshot 的数组
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Envelope'
+                  - properties:
+                      data:
+                        type: array
+                        items:
+                          type: object
+                          required: [market, snapshot]
+                          properties:
+                            market:
+                              type: object
+                              properties:
+                                exchange: {type: string}
+                                name: {type: string}
+                                timeZone: {type: string}
+                                source: {type: string}
+                                calendar: {type: string}
+                                aliases: {type: array, items: {type: string}}
+                            snapshot:
+                              $ref: '#/components/schemas/Snapshot'
+        default:
+          $ref: '#/components/responses/Error'
+  /api/v1/calendars/{exchange}/days:
+    get:
+      operationId: calendarDays
+      description: 起止边界均包含，最多 3660 天；超出覆盖范围返回 422。
+      parameters:
+        - $ref: '#/components/parameters/Exchange'
+        - {name: start, in: query, required: true, schema: {type: string, format: date}}
+        - {name: end, in: query, required: true, schema: {type: string, format: date}}
+        - {name: openOnly, in: query, schema: {type: boolean, default: false}}
+      responses:
+        '200':
+          description: 日期和同一读取事务的快照元数据
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Envelope'
+                  - properties:
+                      data:
+                        type: object
+                        required: [snapshot, days]
+                        properties:
+                          snapshot:
+                            $ref: '#/components/schemas/Snapshot'
+                          days:
+                            type: array
+                            items:
+                              type: object
+                              required: [date, isOpen]
+                              properties:
+                                date: {type: string, format: date}
+                                isOpen: {type: boolean}
+                                overrideReason: {type: string}
+                                overrideSourceUrl: {type: string}
+        default:
+          $ref: '#/components/responses/Error'
+  /api/v1/calendars/{exchange}/next:
+    get:
+      operationId: nextCalendarDays
+      parameters:
+        - $ref: '#/components/parameters/Exchange'
+        - {name: after, in: query, required: true, schema: {type: string, format: date}, description: 排他日期锚点，必须处于已覆盖区间}
+        - {name: count, in: query, required: true, schema: {type: integer, minimum: 1, maximum: 4096}}
+      responses:
+        '200':
+          description: 覆盖末尾返回实际前缀，以 complete=false 表示数量不足
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Envelope'
+                  - properties:
+                      data:
+                        type: object
+                        required: [snapshot, dates, complete]
+                        properties:
+                          snapshot:
+                            $ref: '#/components/schemas/Snapshot'
+                          dates: {type: array, items: {type: string, format: date}}
+                          complete: {type: boolean}
+        default:
+          $ref: '#/components/responses/Error'
+  /api/v1/market-data/trading-calendar:
+    post:
+      operationId: kcqTradingCalendar
+      description: 固定时刻日线标签；默认市场当地时区，UTC 日期标签须显式传 calendarTimeZone=UTC。
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [sourceId, instrument, period, barAggregation, anchorTimestamp, count]
+              properties:
+                sourceId: {type: string, minLength: 1, description: 保持原行情 Connector 的 sourceId}
+                instrument:
+                  type: object
+                  required: [symbol]
+                  properties:
+                    symbol: {type: string, minLength: 1}
+                    exchange: {type: string}
+                    providerRef:
+                      type: object
+                      additionalProperties: true
+                      properties:
+                        calendarExchange: {type: string, description: 显式指定规范市场或别名}
+                        calendarTimeZone: {type: string, description: 日线标签的 IANA 时区}
+                period: {type: string, const: daily}
+                adjustment: {type: string, description: 价格复权不影响日期，不参与计算}
+                barAggregation: {type: string, const: original}
+                anchorTimestamp: {type: integer, format: int64, minimum: 1}
+                count: {type: integer, minimum: 1, maximum: 4096}
+      responses:
+        '200':
+          description: UTC 毫秒升序数组；到覆盖末尾可少于 count，不猜测后续日期
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Envelope'
+                  - properties:
+                      data:
+                        type: object
+                        required: [anchorTimestamp, futureTimestamps]
+                        properties:
+                          anchorTimestamp: {type: integer, format: int64}
+                          futureTimestamps: {type: array, items: {type: integer, format: int64}}
+        default:
+          $ref: '#/components/responses/Error'
+components:
+  parameters:
+    Exchange:
+      name: exchange
+      in: path
+      required: true
+      description: SSE、SZSE、XHKG、XNYS、XNAS 或市场配置中的别名
+      schema: {type: string, minLength: 1}
+  responses:
+    Error:
+      description: 参数错误 400，能力或覆盖范围不支持 422，数据库错误 500；其他状态见 message
+      content:
+        application/json:
+          schema:
+            type: object
+            required: [error, requestId]
+            properties:
+              requestId: {type: string}
+              error:
+                type: object
+                required: [code, message]
+                properties:
+                  code: {type: string, enum: [INVALID_REQUEST, UNSUPPORTED_CAPABILITY, INTERNAL]}
+                  message: {type: string}
+  schemas:
+    Envelope:
+      type: object
+      required: [data, requestId]
+      properties:
+        data: {}
+        requestId: {type: string}
+    Snapshot:
+      type: object
+      required: [exchange, startDate, endDate, source, sourceVersion, sourceUrl, generatedAt, revision, rowCount, overrideCount]
+      properties:
+        exchange: {type: string}
+        startDate: {type: string, format: date}
+        endDate: {type: string, format: date}
+        source: {type: string}
+        sourceVersion: {type: string}
+        sourceUrl: {type: string, format: uri}
+        generatedAt: {type: string, format: date-time}
+        revision: {type: string, description: 内容 SHA-256}
+        rowCount: {type: integer, minimum: 1}
+        overrideCount: {type: integer, minimum: 0}

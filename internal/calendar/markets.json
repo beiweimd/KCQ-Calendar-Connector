@@ -1,0 +1,13 @@
+{
+  "sources": {
+    "baostock": {"url":"http://www.baostock.com"},
+    "exchange_calendars": {"url":"https://github.com/gerrymanoim/exchange_calendars"}
+  },
+  "markets": [
+    {"exchange":"SSE","name":"上海证券交易所","timeZone":"Asia/Shanghai","aliases":["SH","SHSE","XSHG"],"source":"baostock","calendar":"CN","alternateCalendars":{"exchange_calendars":"XSHG"}},
+    {"exchange":"SZSE","name":"深圳证券交易所","timeZone":"Asia/Shanghai","aliases":["SZ","XSHE"],"source":"baostock","calendar":"CN","alternateCalendars":{"exchange_calendars":"XSHG"}},
+    {"exchange":"XHKG","name":"香港联合交易所","timeZone":"Asia/Hong_Kong","aliases":["HK","HKEX","SEHK"],"source":"exchange_calendars","calendar":"XHKG"},
+    {"exchange":"XNYS","name":"纽约证券交易所","timeZone":"America/New_York","aliases":["NYSE"],"source":"exchange_calendars","calendar":"XNYS"},
+    {"exchange":"XNAS","name":"纳斯达克证券市场","timeZone":"America/New_York","aliases":["NASDAQ"],"source":"exchange_calendars","calendar":"XNYS"}
+  ]
+}
